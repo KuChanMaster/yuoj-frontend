@@ -4,9 +4,9 @@ import UserLayout from "@/layouts/UserLayout.vue";
 import UserLoginView from "@/views/user/UserLoginView.vue";
 import UserRegisterView from "@/views/user/UserRegisterView.vue";
 import AdminView from "@/views/AdminView.vue";
-import NoAuthView from "@/views/NoAuthView.vue";
+import NoAuthView from "/src/views/NoAuthView.vue";
 import ACCESS_ENUM from "@/access/accessEnum";
-
+//将项目自带的路由index.tx 路由配置文件抽象出来放在此文件中
 export const routes: Array<RouteRecordRaw> = [
   {
     path: "/user",
@@ -16,43 +16,43 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: "/user/login",
         name: "用户登录",
-        component: UserLoginView,
+        component: UserLoginView
       },
       {
         path: "/user/register",
         name: "用户注册",
-        component: UserRegisterView,
-      },
+        component: UserRegisterView
+      }
     ],
     meta: {
-      hideInMenu: true,
-    },
+      hideInMenu: true
+    }
   },
   {
     path: "/",
     name: "浏览题目",
-    component: HomeView,
+    component: HomeView
   },
   {
     path: "/hide",
     name: "隐藏页面",
     component: HomeView,
     meta: {
-      hideInMenu: true,
-    },
+      hideInMenu: true
+    }
   },
   {
     path: "/noAuth",
     name: "无权限",
-    component: NoAuthView,
+    component: NoAuthView
   },
   {
     path: "/admin",
     name: "管理员可见",
     component: AdminView,
     meta: {
-      access: ACCESS_ENUM.ADMIN,
-    },
+      access: ACCESS_ENUM.ADMIN
+    }
   },
   {
     path: "/about",
@@ -61,6 +61,6 @@ export const routes: Array<RouteRecordRaw> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  },
+      import(/* webpackChunkName: "about" */ "../views/AboutView.vue")
+  }
 ];

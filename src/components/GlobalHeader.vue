@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { routes } from "../router/routes";
+import { routes } from "@/router/routes";
 import { useRoute, useRouter } from "vue-router";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
@@ -59,7 +59,7 @@ const visibleRoutes = computed(() => {
 // 默认主页
 const selectedKeys = ref(["/"]);
 
-// 路由跳转后，更新选中的菜单项
+// 路由跳转后，更新选中的菜单项：点击菜单项=》跳转更新路由=》更新后，同步去更新菜单高亮
 router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
