@@ -3,7 +3,7 @@ import { routes } from "@/router/routes";//将此文件中的路由配置抽象�
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes
 });
 
 export default router;
